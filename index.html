@@ -35,6 +35,119 @@ ul.a {
   clear: both;
   display: table;
 }
+
+/* Research project tiles */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-tile {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-tile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #009688;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  background: #009688;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85em;
+  transition: background 0.3s ease;
+}
+
+.project-link:hover {
+  background: #00695C;
+  color: white;
+}
+
+/* Modal for project details */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}
 </style>
 <body class="w3-black">
 
@@ -49,7 +162,7 @@ ul.a {
     
       <div class="w3-white w3-text-black w3-card-4">
         <div class="w3-display-container">
-          <img src="./files/photo.jpg"/  style="width:100%" alt="Avatar">
+          <img src="./files/headshot20245.jpg"/  style="width:100%" alt="Avatar">
         </div>
         <div class="w3-container">
           <div class="w3-container w3-text-black">
@@ -61,7 +174,7 @@ ul.a {
             <p class="w3-large"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Affiliate Asst. Professor</p>
              <p><i class="fa fa-fw w3-margin-right w3-large"></i><a href="https://www.ece.uw.edu/">Department of ECE</a></p>
             <p><i class="fa fa-fw w3-margin-right w3-large"></i>University of Washington, Seattle</p>
-             <p class="w3-large"><i class="fa fa-file-pdf-o fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="./files/VAISHNAVI NATTAR_CV.pdf">Resume</a></p>
+             <!--<p class="w3-large"><i class="fa fa-file-pdf-o fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="./files/VAISHNAVI NATTAR_CV.pdf">Resume</a></p> -->
              <p class="w3-large"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="mailto:vnattar@uw.edu">vnattar@microsoft.com</a></p>
              <p class="w3-large"><i class="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="https://www.linkedin.com/in/vaishnavi-ranganathan-45685756/">Find me on Linkedin</a></p>
 
@@ -85,9 +198,10 @@ ul.a {
 <!--         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user-circle fa-fw w3-margin-right w3-xxlarge w3-text-teal"><a href="./files/AboutME.pdf"></i>About Me</h2></a>
         <div class="w3-container"> -->
           <h5 class="w3-opacity w3-xlarge w3-text-teal"><b>About Me</b></h5>
-          <p class="w3-large">I continue to work on exciting research projects with some great co-conspirators. I am set on a path to do what I like most: building things, bricking things, and tinkering with more things! At Microsoft Research, my research lies at the intersection of technology and sustainability. I currently lead research on supply chain traceability through the project FoodVibes, which aims to create trusted, transparent and sustainable food supply chains. My research aims to address global challenges in sustainability, agriculture and the environment. I am also an affiliate Assistant Professor at the University of Washington, where I serve as a mentor for fun and meaningful research at the intersection of sustainability and technology. 
-		</p>
-          <p class="w3-large"><i>If you have exciting ideas and would like to chat, you can email me at vnattar@microsoft.com or find me on Linkedin</i></p>
+          <p class="w3-large">I started my research career as a little snowflake on top of a mountain that started rolling down. Now I feel like an avalanche that just kept collecting more snow (and a decent bit of debris) along the way 😊.</p> 
+<p class="w3-large">I call myself a Sensing Systems Researcher, and I keep this intentionally vague owing to the wild trajectory that my research has taken me in in the past decade! Thanks to a very tolerant advisor, managers, colleagues and mentors I got to work (and sometime lead) impactful and fun projects that I am passionate about (My research section below should give you an idea). I have so far tried to use my experience building Sensing Systems and technology to address global challenges in healthcare, agriculture and sustainability. In the era of AI, I am now on a journey to explore exciting opportunities that I can apply my learnings to. For the past year, I have worked on innovating at the intersection of secure AI devices, multi-modal sensing and AI personalization.
+</p>
+          <p class="w3-large"><i>Stay tuned for more updates!</i></p>
 
          <h5 class="w3-opacity w3-xlarge w3-text-teal"><b>Recent Updates</b></h5>
           <p class="w3-large">
@@ -103,87 +217,257 @@ ul.a {
           </p>
 
           <h5 class="w3-opacity w3-xlarge w3-text-teal"><b>Research at Microsoft</b></h5>
-          <h6 class="w3-large w3-text-grey"><b>FoodVibes</b></h6>
-          <p class="w3-large">Through Project FoodVibes, we hope to address the global food supply challenges posed by the United Nation. We do this by focusing on the critical need for traceability, which can help reduce waste and optimize food production and supply. At Microsoft Research, I lead the efforts to enable end-to-end supply chain traceability to help meet quality, safety and regulatory requirements. One of our goals is to help producers and suppliers navigate the European Union's 2024 regulation against deforestation <a href="https://green-business.ec.europa.eu/deforestation-regulation-implementation_en"><b>(EUDR)</b></a>. Towards this, FoodVibes provides a traceability tool which enables geospatial analytics in the food supply chain; specifically for this application it enables geo-location-based deforestation insights in the supply chain. Project FoodVibes also explores using IoT and Wireless technology to enable a broade range of supply chain solutions. Read more about the larger project <a href="https://www.microsoft.com/en-us/research/project/project-farmvibes/">FarmVibes</a> and our work on <a href="https://ieeexplore.ieee.org/abstract/document/9773091">FoodVibes</a>.</p>
-          <div class="w3-display-container">
-            <img src="./images/FarmVibes.jpg"/  style="width:100%" alt="FarmVibes">
+          
+          <!-- Research Projects Grid -->
+          <div class="research-grid">
+            <div class="project-tile" onclick="openModal('lexicon')">
+              <img src="./images/DoryL.png" alt="Lexicon">
+              <div class="project-content">
+                <div class="project-title">Coming Soon: Secure AI device interface, multi-modal sensing & AI personalization</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Nov 2024 - current</p>
+              </div>
+            </div>
+
+            <div class="project-tile" onclick="openModal('foodvibes')">
+              <img src="./images/FarmVibes.jpg" alt="FoodVibes">
+              <div class="project-content">
+                <div class="project-title">FoodVibes: Supply Chain Traceability & Geospatial Analytics</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">July 2020 - Dec 2024</p>
+              </div>
+            </div>
+
+            <div class="project-tile" onclick="openModal('eclipse')">
+              <img src="./images/Ecosystem_Eclipse.jpg" alt="Project Eclipse">
+              <div class="project-content">
+                <div class="project-title">Project Eclipse: Hyperlocal Urban Air-Quality Monitoring</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Feb 2019 - Sept 2022</p>
+              </div>
+            </div>
+
+            <div class="project-tile" onclick="openModal('batteryfree')">
+              <img src="./files/Intro.png" alt="Battery-Free Sensing">
+              <div class="project-content">
+                <div class="project-title">RF Bandaid: Battery-Free Sensing and Communication</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">June 2016 - current</p>
+              </div>
+            </div>
           </div>
+          
+ 
+            <ul class="a">
 
-          <h6 class="w3-large w3-text-grey"><b>Project Eclipse</b></h6>
-          <p class="w3-large">Pollution is something most residents of cities experience regularly, but few cities have the tools to track pollution in real-time or at the neighborhood scale. Through Project Eclipse, we bring hyperlocal air quality sensing to cities across the US, create awareness of local air quality and help understand its impact on the local communities. As a part of the interdisciplinary team, I helped design, calibrate and deploy the air quality sensors. You can learn more about <a href="https://www.microsoft.com/en-us/research/project/project-eclipse/">Project Eclipse</a> and our publication on <a href="https://www.microsoft.com/en-us/research/publication/eclipse-an-end-to-end-platform-for-low-cost-hyperlocal-environmental-sensing-in-cities/">Eclipse, an end-to-end platform</a></p>
-          <div class="w3-display-container">
-            <img src="./images/Ecosystem_Eclipse.jpg"/  style="width:100%" alt="Eclipse Ecosystem">
-          </div>
+  
 
-          <h6 class="w3-large w3-text-grey"><b>Battery-Free Sensing</b></h6>
-          <p class="w3-large">As a summer intern in the Medical Devices Group at MSR in 2016 I developed a fully-analog wearable passive sensor for continuous physiological monitoring. I returned to work with the group in late 2017 to work on further integration of the system to an existing sensor framework and to validate it with testing. The vision for this work is to develop a bandaid-like device that can be worn on the body for bed-side monitoring of heart rate, breathing rate, temperature and audio. The device was also designed for sensor input flexibility as a plug-and-play platform that interfaces with different types of sensors. The prototype device performs sensing and communicates sensed signals at 35 to 160 micro Watts power budget (harvested from a 915MHz radio frequency continuous wave singal). Here is a link to the paper <a href="https://dl.acm.org/doi/10.1145/3214282">"RF Bandaid: A Fully-Analog and Passive Wireless Interface for Wearable Sensors"</a>. this work received the distinguished paper award at Ubicomp 2019.</p>
-          <p class="w3-large">
-          <ul class="a">
-
-            <li>Together with Jingxian Wang in 2020, I explored temperature sensing applications using battery-less tags and developed <a href="https://dl.acm.org/doi/10.1145/3517242">"ultralow-latency localization using the RFbandaid platform"</a>. This work demonstrates sub-centimetter location tracking at sub-millisecond latency.
-			</li>
-            <li>As a part of a collaboration with UpsalaUniversity in 2021 we created a novel <a href= "https://ieeexplore.ieee.org/abstract/document/9795971">" beat frequency-based identification method for analog tags"</a>.</li>
-          </ul>
+            </ul>
           </p>
-          <div class="w3-display-container">
-            <img src="./files/Intro.png"/  style="width:100%" alt="Battery-Free sensing">
+
+
+
+
+          <!-- Modals for project details -->
+          <div id="foodvibes" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('lexicon')">&times;</span>
+              <h2 style="color: #009688;">Secure AI device interface, multi-modal sensing & personalization</h2>
+              <img src="./images/DoryL.png" style="width:100%; margin-bottom: 20px;" alt="Lexicon">
+              <p><strong>Project Highlights:</strong> 2024 was a year dedicated to global policies for traceability in food supply chains. As a part of our effort to support innovation in this area, we recently open sourced several tools through project FoodVibes.</p>
+              
+              <h3>Key Features:</h3>
+              <ul>
+                <li><strong>FoodVibes-ai:</strong> An open-source tool that offers food and agricultural businesses an end-to-end supply chain traceability solution. The tool aims to bridge the critical information gaps in global supply chains by building on trusted ledgers to track the When, What and Where of a product through its lifetime.</li>
+                <li><strong>Regulatory Compliance:</strong> Adopts strategies like the "one step forward and one step backward" association prescribed by the United Nations Food and Agriculture Organization (FAO) and by the U.S. Food and Drug Administration (FDA).</li>
+                <li><strong>EUDR Support:</strong> Helps producers and suppliers navigate the European Union's 2024 regulation against deforestation through geospatial analytics and geo-location-based deforestation insights.</li>
+              </ul>
+              
+              <p>Through Project FoodVibes, we hope to address the global food supply challenges posed by the United Nations. We do this by focusing on the critical need for traceability, which can help reduce waste and optimize food production and supply. Project FoodVibes also explores using IoT and Wireless technology to enable a broader range of supply chain solutions. <a href="https://dl.acm.org/doi/pdf/10.1145/3701701.3701705" target="_blank"><strong>Fresh Sense</strong></a> presents a novel way of using wireless signals for pallet level produce lifetime monitoring during storage and transit of produce.</p>
+              <h3>Remote Sensing:</h3>
+              <p>In addition to supply chain traceability, I got to lead a fantastic team of interns and researchers on remote and satellite-based sensing. The projects were primarily around <a href="https://arxiv.org/pdf/2502.18704" target="_blank">land use monitoring</a>, <a href="https://github.com/microsoft/farmvibes-ai/tree/main/notebooks/forest" target="_blank"> deforestation monitoring</a>, <a href="https://github.com/nazish-naeem/SatExt" target="_blank"></a>spectral, temporal and spatial extension of satellite image data, radar-reflectors for low-fidelity communication through SAR satellite imaging. </a></p>
+              <p><strong>Links:</strong> <a href="https://github.com/microsoft/foodvibes-ai" target="_blank"><strong>FoodVibes Git Repo</strong></a> | <a href="https://github.com/Angelaangie-ai/terra_trace" target="_blank"><strong>TerraTrace Git Repo</strong></a> | <a href="https://www.microsoft.com/en-us/research/project/project-farmvibes/" target="_blank"><strong>FarmVibes Project</strong></a> | <a href="https://github.com/nazish-naeem/SatExt" target="_blank"><strong>SatExt Git Repo | <a href="https://ieeexplore.ieee.org/abstract/document/9773091" target="_blank"><strong>IEEE Publication</strong></a></p>
+            </div>
           </div>
-          <div class="w3-display-container">
-				<video width=100% controls>
- 					 <source src="./files/battey-free-demo.mp4" type="video/mp4" alt="Battery-free sensing demo">
- 					 </video>
 
-			</div>
-			<div class="w3-display-container">
+          <div id="foodvibes" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('foodvibes')">&times;</span>
+              <h2 style="color: #009688;">FoodVibes: Supply Chain Traceability & Geospatial Analytics</h2>
+              <img src="./images/FarmVibes.jpg" style="width:100%; margin-bottom: 20px;" alt="FarmVibes">
+              <p><strong>Project Highlights:</strong> 2024 was a year dedicated to global policies for traceability in food supply chains. As a part of our effort to support innovation in this area, we recently open sourced several tools through project FoodVibes.</p>
+              
+              <h3>Key Features:</h3>
+              <ul>
+                <li><strong>FoodVibes-ai:</strong> An open-source tool that offers food and agricultural businesses an end-to-end supply chain traceability solution. The tool aims to bridge the critical information gaps in global supply chains by building on trusted ledgers to track the When, What and Where of a product through its lifetime.</li>
+                <li><strong>Regulatory Compliance:</strong> Adopts strategies like the "one step forward and one step backward" association prescribed by the United Nations Food and Agriculture Organization (FAO) and by the U.S. Food and Drug Administration (FDA).</li>
+                <li><strong>EUDR Support:</strong> Helps producers and suppliers navigate the European Union's 2024 regulation against deforestation through geospatial analytics and geo-location-based deforestation insights.</li>
+              </ul>
+              
+              <p>Through Project FoodVibes, we hope to address the global food supply challenges posed by the United Nations. We do this by focusing on the critical need for traceability, which can help reduce waste and optimize food production and supply. Project FoodVibes also explores using IoT and Wireless technology to enable a broader range of supply chain solutions. <a href="https://dl.acm.org/doi/pdf/10.1145/3701701.3701705" target="_blank"><strong>Fresh Sense</strong></a> presents a novel way of using wireless signals for pallet level produce lifetime monitoring during storage and transit of produce.</p>
+              <h3>Remote Sensing:</h3>
+              <p>In addition to supply chain traceability, I got to lead a fantastic team of interns and researchers on remote and satellite-based sensing. The projects were primarily around <a href="https://arxiv.org/pdf/2502.18704" target="_blank">land use monitoring</a>, <a href="https://github.com/microsoft/farmvibes-ai/tree/main/notebooks/forest" target="_blank"> deforestation monitoring</a>, <a href="https://github.com/nazish-naeem/SatExt" target="_blank"></a>spectral, temporal and spatial extension of satellite image data, radar-reflectors for low-fidelity communication through SAR satellite imaging. </a></p>
+              <p><strong>Links:</strong> <a href="https://github.com/microsoft/foodvibes-ai" target="_blank"><strong>FoodVibes Git Repo</strong></a> | <a href="https://github.com/Angelaangie-ai/terra_trace" target="_blank"><strong>TerraTrace Git Repo</strong></a> | <a href="https://www.microsoft.com/en-us/research/project/project-farmvibes/" target="_blank"><strong>FarmVibes Project</strong></a> | <a href="https://github.com/nazish-naeem/SatExt" target="_blank"><strong>SatExt Git Repo | <a href="https://ieeexplore.ieee.org/abstract/document/9773091" target="_blank"><strong>IEEE Publication</strong></a></p>
+            </div>
+          </div>
 
-				<video width=100% controls>
- 					 <source src="./files/msft.mp4" type="video/mp4" alt="FastLoc demo">
- 					 </video>
-			</div>
+          <div id="eclipse" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('eclipse')">&times;</span>
+              <h2 style="color: #009688;">Project Eclipse: Hyperlocal Air Quality Sensing</h2>
+              <img src="./images/Ecosystem_Eclipse.jpg" style="width:100%; margin-bottom: 20px;" alt="Eclipse Ecosystem">
+              <p>Pollution is something most residents of cities experience regularly, but few cities have the tools to track pollution in real-time or at the neighborhood scale. This project and the team's passion to spotlight and solve a real challenge is the reason I landed at Microsoft Research!</p>
+              
+              <h3>Project Goals:</h3>
+              <ul>
+                <li>Bring hyperlocal air quality sensing to cities across the US</li>
+                <li>Real-time data analytics to create awareness of local air quality conditions</li>
+                <li>Help understand pollution's impact on local communities</li>
+                <li>Enable real-time, neighborhood-scale environmental monitoring</li>
+              </ul>
+              
+              <p>As a part of the interdisciplinary team, I helped design, calibrate, deploy and maintain the network of a hundred air quality sensors in the city of Chicago to make this vision possible.</p>
+              
+              <p><strong>Links:</strong> <a href="https://www.microsoft.com/en-us/research/project/project-eclipse/" target="_blank">Project Eclipse</a> | <a href="https://www.microsoft.com/en-us/research/publication/eclipse-an-end-to-end-platform-for-low-cost-hyperlocal-environmental-sensing-in-cities/" target="_blank">Publication</a></p>
+            </div>
+          </div>
 
-          <h6 class="w3-large w3-text-grey"><b>Brain-Computer-Spinal Interface</b></h6>
-          <p class="w3-large">I graduated with a Ph.D. from the <a href="https://sensor.cs.washington.edu">Sensor Systems Lab</a> at the University of Washington, Seattle, WA. My research interests involve developing low-power and wireless sensing systems for healthcare, environment and IoT applications. Specifically, I have worked on HF near-field and UHF far-field wireless energy harvesting, ultra-low-power wireless communication and computation for implantable and wearable devices. Here is my <a href="./files/VNATTAR_Dissertation_Dec2019.pdf"></i><b>dissertation document</b></h2></a> if you want to learn more about the work. The modular neural interface device <a href="https://ieeexplore.ieee.org/document/8717135"> NeuralCLIP</a> which was developed as a part of this project was awarded the Madrona prize runner up in 2018.<a href="https://www.businesswire.com/news/home/20181102005551/en/Madrona-Awards-2018-Madrona-Prize-UW-Project"> <b>Title: Implantable Wireless Brain-Computer Interface</b>.
-          <div class="w3-display-container">
-            <img src="./files/BCSI_new-with device.png"/  style="width:100%" alt="BCSI">
-          </div>		
+          <div id="batteryfree" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('batteryfree')">&times;</span>
+              <h2 style="color: #009688;">Battery-Free Sensing: RF Bandaid Platform</h2>
+              <img src="./files/Intro.png" style="width:100%; margin-bottom: 20px;" alt="Battery-Free sensing">
+              
+              <h3>Project Overview:</h3>
+              <p>As a summer intern in the Medical Devices Group at MSR in 2016, I developed a fully-analog wearable passive sensor for continuous physiological monitoring. The vision for this work is to develop a bandaid-like device that can be worn on the body for bed-side monitoring of heart rate, breathing rate, temperature and audio. It is my pleasure to continue innovating in this area of analog, battery-free sensing and communication with my Rockstar Academic Collaborators across the world - thanks for keepign me excited folks!</p>
+              
+              <h3>Key Innovations:</h3>
+              <ul>
+                <li><strong>Ultra-Low Power:</strong> Device operates at 35 to 160 micro Watts power budget, harvested from 915MHz RF signals</li>
+                <li><strong>Plug-and-Play Design:</strong> Flexible sensor input platform that interfaces with different types of sensors</li>
+                <li><strong>Distinguished Recognition:</strong> Received distinguished paper award at UbiComp 2019</li>
+              </ul>
+              
+              <h3>Research Extensions:</h3>
+              <ul>
+                <li><strong>Ultra-low Latency Localization:</strong> With Jingxian Wang in 2020, demonstrated sub-centimeter location tracking at sub-millisecond latency</li>
+                <li><strong>Beat Frequency Identification:</strong> Collaboration with Uppsala University in 2021 created a novel identification method for analog tags</li>
+              </ul>
+              
+              <div style="margin: 20px 0;">
+                <video width="100%" controls style="margin-bottom: 10px;">
+                  <source src="./files/battey-free-demo.mp4" type="video/mp4" alt="Battery-free sensing demo">
+                </video>
+                <video width="100%" controls>
+                  <source src="./files/msft.mp4" type="video/mp4" alt="FastLoc demo">
+                </video>
+              </div>
+              
+              <p><strong>Links:</strong> <a href="https://dl.acm.org/doi/10.1145/3214282" target="_blank">RF Bandaid Paper</a> | <a href="https://dl.acm.org/doi/10.1145/3517242" target="_blank">Localization Paper</a> | <a href="https://ieeexplore.ieee.org/abstract/document/9795971" target="_blank">Beat Frequency Paper</a> | <a href="https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en" target="_blank">More in Google Scholar</a></p>
+            </div>
+          </div>
 
           <hr>
         </div>
 		<div class="w3-container w3-card-2 w3-white">
         <div class="w3-container">
         	<h5 class="w3-opacity w3-xlarge w3-text-teal"><b>Academic Background</b></h5>
-		<h5 class="w3-opacity w3-xlarge"><b>PhD / <a href="https://www.ee.washington.edu">University of Washington ECE</a></b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sept 2013 - <span class="w3-tag w3-teal w3-round">Dec 2018</span></h6>
-          <p class="w3-large">
-             <p>My PhD research focussed on a closed loop neural interface for rehabilitation and reanimation of paralyzed limbs in patients with spinal cord injury. The images above are a summary of the <b>Brain-Computer-Sinal Interface (BCSI) system</b> development. They provide a system level block diagram and functional illustration along with the devices that I developed towards this. The system is designed to stimulate in the spinal cord based on intentions decoded from neural signals recorded in the brain and close the break in communication created by a spinal cord injury. </p>
-              As a part of my PhD research, I worked on integrating the typical benchtop equiment that are used for neural interface into small circuit boards that are implantable. The key features of this system include <b><i>wireless power transfer, ultralow-power communication and closed-loop neural recording and stimulation</b></i>. The final prototype, the NeuralCLIP, demonstrates stimulation triggered by on-device decoding of action intent from Local Field Potentials (LFP) recorded in the motor cortex. To accommodate for variation in power availabile from a wireless power transfer link, the system implements processes as approximate computation blocks on a FPGA. I was awarded a graduate innovation fellowship from the <a href="http://uwin.washington.edu/students/graduate-students/current-graduate-fellows/"> Washington Research Foundation to support this work on the implantable neural interface device.</a> 
-
-             <p>Apart form this I have worked on other cool projects including energy harvesting from RF and NFC for wearable sensors, analog backscatter, wireless power transfer using phased array systems and low-overhead echolocation for localizing receivers in a HF phased array power transfer system (links to publications in <a href= "https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en"> <b>My Google Scholar</b></a> page). I have also developed an FPGA implementation of the RFID EPC Gen2 protocol for performing block read and write with an Impinj R1000 RFID reader. This design was implemented for a 65nm CMOS IC development. Email me for the access to the FPGA library git repository.</p>
-
-            <div class="w3-display-container">
-            <img src="./files/Power_aware.png"/  style="width:100%" alt="Power Aware Wireless Neural Interface">
-          </div>
-           </p>
-        </div>
+          
+          <!-- Academic Background Grid -->
         <div class="w3-container">
-          <h5 class="w3-opacity w3-xlarge"><b>MS / <a href="http://engineering.case.edu/eecs/"> CWRU EECS</a></b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2011 - Jul 2013</h6>
-          <p class="w3-large">I received my Masters in EECS from Case Western Reserve University (CWRU), Cleveland OH. As a part of the Nanoscape Lab I pursued research on NEMS for harsh environment, high-speed switching and non-volatile memory. My dissertation document can be found under <a href="https://etd.ohiolink.edu/apexprod/rws_olink/r/1501/10?clear=10&p10_accession_num=case1372682480"> "Silicon Carbide NEMS Logic and Memory for Computation at Extreme: Device Design and Analysis“</a> In addition, I was involved in the development of a <a href="https://medicalxpress.com/news/2013-06-vest-cancers-symptoms.html">dual purpose implantable ultrasonic assembly</a> for detecting recurrent cancer, and design and analysis of a nanochannel for fast DNA base sequencing.</p>
-           <div class="w3-display-container">
-           <div class = column>
-            <img src="./images/NEMS.jpg"/  style="width:100%" alt="NEMS">
+          <h5 class="w3-opacity w3-xlarge"><b>Graduate: PhD. in Electrical & Computer Engineering, <a href="https://sensor.cs.washington.edu/people">Sensor Systems Lab</a>, University of Washington, Seattle </b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2013 - July 2018</h6>
+          <p class="w3-large">I graduated with a Ph.D. from the Sensor Systems Lab at the University of Washington, Seattle, WA. The primary focus was applying my research on low-power, wireless, sensing and communication systems towards building a <b>Brain-Computer-Spinal Interface</b>, a closed-loop neural implant prototype that was the first of its kind to assist in spinal-cord-injury rehabilitation. </p><br>
         </div>
-           <div class = column> 
-            <img src="./images/US.jpg"/  style="width:100%" alt="US">
-        </div>
+          <div class="research-grid">
+            
+            <div class="project-tile" onclick="openModal('phd')">
+              <img src="./files/BCSI_new-with device.png" alt="Brain-Computer-Spinal Interface">
+              <div class="project-content">
+                <div class="project-title">PhD. - Wireless & Brain-Computer-Spinal Interface</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Aug 2013 - Jul 2018</p>
+              </div>
+            </div>
+
+            <div class="project-tile" onclick="openModal('masters')">
+              <img src="./images/NEMS.jpg" alt="Masters - CWRU EECS">
+              <div class="project-content">
+                <div class="project-title">Masters - CWRU EECS</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Aug 2011 - Jul 2013</p>
+              </div>
+            </div>
           </div>
-          <hr>
         </div>
+        
         <div class="w3-container">
-          <h5 class="w3-opacity w3-xlarge"><b>B.Tech /<a href="https://www.amrita.edu/school/engineering/coimbatore/electrical-and-electronics">ASE India</a> </b></h5>
+          <h5 class="w3-opacity w3-xlarge"><b>Undergraduate: B.Tech in Electronics and Instrumentation Engineering/<a href="https://www.amrita.edu/school/engineering/coimbatore/electrical-and-electronics">Amrita School of Engineering, India</a> </b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Aug 2007 - July 2011</h6>
-          <p class="w3-large">I received my B.Tech in Electronics and Instrumentation Engineering from Amrita School of Engineering, Coimbatore, India and was a research student at the Indian Institute of Technology, Bombay during my senior year in B.Tech. As an undergraduate I gained experience in robotics, MEMS and was a member of SAE India. </p><br>
+          <p class="w3-large">I received my B.Tech in Electronics and Instrumentation Engineering from Amrita School of Engineering, Coimbatore, India and was a Visiting Researcher at the Indian Institute of Technology (IIT), Bombay during my senior year in B.Tech. As an undergraduate I gained experience in robotics, MEMS and was a member of SAE India. </p><br>
         </div>
+
+
+
+
+        
+        <!-- Academic Background Modals -->
+        
+        <div id="phd" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('phd')">&times;</span>
+            <h2 style="color: #009688;">Wireless & Brain-Computer-Spinal  Interface</h2>
+            <h4 style="color: #666;">Sept 2013 - Dec 2018</h4>
+            <img src="./files/BCSI_new-with device.png" style="width:100%; margin-bottom: 20px;" alt="Brain-Computer-Spinal Interface">
+            
+            
+            <h3>Research Focus: Brain-Computer-Spinal Interface (BCSI)</h3>
+            <p>My PhD research focussed on a closed loop neural interface for rehabilitation and reanimation of paralyzed limbs in patients with spinal cord injury. The BCSI system development provides a system level block diagram and functional illustration along with the devices that I developed. The system is designed to stimulate in the spinal cord based on intentions decoded from neural signals recorded in the brain and close the break in communication created by a spinal cord injury.</p>
+            <img src="./files/Power_aware.png" style="width:100%; margin-bottom: 20px;" alt="Power Aware Wireless Neural Interface">
+            <h3>Key Innovations:</h3>
+            <ul>
+              <li><strong>Wireless Power Transfer:</strong> Integrated wireless power transfer at HF (13.56MHz) for power delivery to implants</li>
+              <li><strong>Ultra-low Power Communication:</strong> Optimized UHF (915MHz) Backscatter communication for low-power implants</li>
+              <li><strong>Closed-loop Neural Recording and Stimulation:</strong> Real-time FPGA algorithms built on approximate computing for neural signal processing</li>
+              <li><strong>NeuralCLIP Prototype:</strong> Demonstrates stimulation triggered by on-device decoding of action intent from Local Field Potentials (LFP) recorded in the motor cortex</li>
+            </ul>
+            
+            <h3>Technical Achievements:</h3>
+            <p>To accommodate for variation in power available from a wireless power transfer link, the closed-loop system is built on novel approximate computation blocks on a FPGA. I was awarded a graduate innovation fellowship from the Washington Research Foundation to support this work on the implantable neural interface device.</p>
+            <p><strong>Award:</strong> <a href="https://wrf.washington.edu/" target="_blank">Washington Research Foundation Fellowship 2017: Innovation Graduate Fellowship in Neuroengineering</a></p>
+            <h3>NeuralCLIP Prototype</h3>
+            <p>The modular neural interface device <a href="https://ieeexplore.ieee.org/document/8717135" target="_blank">NeuralCLIP</a> which was developed as a part of this project was awarded the Madrona prize runner up in 2018.</p>
+            <p><strong>Award:</strong> <a href="https://www.businesswire.com/news/home/20181102005551/en/Madrona-Awards-2018-Madrona-Prize-UW-Project" target="_blank">Madrona Prize 2018 - Implantable Wireless Brain-Computer Interface</a></p>
+            
+
+            <p>Apart from this core research, I worked on other projects including energy harvesting from RF and NFC for wearable sensors, analog backscatter, wireless power transfer using phased array systems and low-overhead echolocation for localizing receivers in a HF phased array power transfer system. I also developed an FPGA implementation of the RFID EPC Gen2 protocol for performing block read and write with an Impinj R1000 RFID reader.</p>
+            
+          <p><strong>Publications:</strong> <a href="./files/VNATTAR_Dissertation_Dec2019.pdf" target="_blank">Dissertation Document</a> | <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9458256" target="_blank">Brain-Computer-Spinal-Interface</a> | <a href="https://ieeexplore.ieee.org/document/8717135" target="_blank">NeuralCLIP Paper</a> | <a href="https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en" target="_blank">More Publications: Google Scholar</a> </p>
+          </div>
+        </div>
+
+        <div id="masters" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('masters')">&times;</span>
+            <h2 style="color: #009688;">Masters - Case Western Reserve University EECS</h2>
+            <h4 style="color: #666;">Aug 2011 - Jul 2013</h4>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+              <img src="./images/NEMS.jpg" style="width:100%;" alt="NEMS">
+              <img src="./images/US.jpg" style="width:100%;" alt="Ultrasonic Assembly">
+            </div>
+            
+            <h3>Research Focus: NEMS for Extreme Environments</h3>
+            <p>I received my Masters in EECS from Case Western Reserve University (CWRU), Cleveland OH. As a part of the Nanoscape Lab I pursued research on NEMS for harsh environment, high-speed switching and non-volatile memory.</p>
+            
+            <h3>Key Projects:</h3>
+            <ul>
+              <li><strong>Silicon Carbide NEMS:</strong> Logic and memory devices for computation at extreme conditions</li>
+              <li><strong>Medical Device Development:</strong> Dual purpose implantable ultrasonic assembly for detecting recurrent cancer</li>
+              <li><strong>DNA Sequencing:</strong> Design and analysis of nanochannel for fast DNA base sequencing</li>
+            </ul>
+            
+            <p><strong>Dissertation:</strong> <a href="https://etd.ohiolink.edu/apexprod/rws_olink/r/1501/10?clear=10&p10_accession_num=case1372682480" target="_blank">"Silicon Carbide NEMS Logic and Memory for Computation at Extreme: Device Design and Analysis"</a></p>
+            
+            <p><strong>Links:</strong> <a href="http://engineering.case.edu/eecs/" target="_blank">CWRU EECS Department</a> | <a href="https://medicalxpress.com/news/2013-06-vest-cancers-symptoms.html" target="_blank">Cancer Detection Device News</a></p>
+          </div>
+        </div>
+
+        
       </div>
 
 
@@ -200,6 +484,26 @@ ul.a {
   <p>Find me on LinkedIn.</p>
   <a href="https://www.linkedin.com/in/vaishnavi-ranganathan-45685756/"> <i class="fa fa-linkedin w3-hover-text-indigo w3-large"> </i> </a>
 </footer>
+
+<script>
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  var modals = document.getElementsByClassName('modal');
+  for (var i = 0; i < modals.length; i++) {
+    if (event.target == modals[i]) {
+      modals[i].style.display = "none";
+    }
+  }
+}
+</script>
 
 </body>
 </html>
