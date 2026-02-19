@@ -220,7 +220,7 @@ ul.a {
             <div class="project-tile" onclick="openModal('lexicon')">
               <img src="./images/DoryL.png" alt="Lexicon">
               <div class="project-content">
-                <div class="project-title">Coming Soon: Secure AI device interface, multi-modal sensing & AI personalization</div>
+                <div class="project-title">Coming Soon: Secure AI Device Interface, Multi-Modal Sensing & AI Personalization</div>
                 <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Nov 2024 - current</p>
               </div>
             </div>
@@ -228,7 +228,7 @@ ul.a {
             <div class="project-tile" onclick="openModal('foodvibes')">
               <img src="./images/FarmVibes.jpg" alt="FoodVibes">
               <div class="project-content">
-                <div class="project-title">FoodVibes: Supply Chain Traceability & Geospatial Analytics</div>
+                <div class="project-title">FoodVibes: Supply Chain Traceability, Wireless Sensing, IoT & Geospatial Analytics</div>
                 <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Oct 2020 - Dec 2024</p>
               </div>
             </div>
@@ -244,8 +244,16 @@ ul.a {
             <div class="project-tile" onclick="openModal('batteryfree')">
               <img src="./files/Intro.png" alt="Battery-Free Sensing">
               <div class="project-content">
-                <div class="project-title">RF Bandaid: Battery-Free Sensing and Communication</div>
+                <div class="project-title">RF Bandaid: Fully-Analog Battery-Free Sensing and Communication</div>
                 <p style="color: #666; font-size: 0.9em; margin-top: 5px;">June 2016 - current</p>
+              </div>
+            </div>
+
+            <div class="project-tile" onclick="openModal('farmable')">
+              <img src="images/Farmable.png" alt="FarmAble Project">
+              <div class="project-content">
+                <div class="project-title">FarmAble: Innovation to Support Local Farm-to-Table Ecosystem | UW GIX & Microsoft</div>
+                <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Sept 2023 - March 2025</p>
               </div>
             </div>
           </div>
@@ -288,19 +296,32 @@ ul.a {
               <span class="close" onclick="closeModal('foodvibes')">&times;</span>
               <h2 style="color: #009688;">FoodVibes: Supply Chain Traceability & Geospatial Analytics</h2>
               <img src="./images/FarmVibes.jpg" style="width:100%; margin-bottom: 20px;" alt="FarmVibes">
-              <p><strong>Project Highlights:</strong> 2024 was a year dedicated to global policies for traceability in food supply chains. As a part of our effort to support innovation in this area, we recently open sourced several tools through project FoodVibes.</p>
-              
-              <h3>Key Features:</h3>
+              <p>Traceability and accountability are key features necessary for food supply chain optimization. The global nature of these supply chains, which involve multiple stakeholders and low profit margin, make it hard to reliably track products and relevant information. I led a small team of interns and researchers on project FoodVibes to explore how we can leverage <strong>wireless sensing, communication, IoT, satellites, and geospatial analytics</strong> to enable sustainable, secure and transparent food supply chains.</p>
+
+              <p><strong>Quick Links:</strong></p>
               <ul>
-                <li><strong>FoodVibes-ai:</strong> An open-source tool that offers food and agricultural businesses an end-to-end supply chain traceability solution. The tool aims to bridge the critical information gaps in global supply chains by building on trusted ledgers to track the When, What and Where of a product through its lifetime.</li>
-                <li><strong>Regulatory Compliance:</strong> Adopts strategies like the "one step forward and one step backward" association prescribed by the United Nations Food and Agriculture Organization (FAO) and by the U.S. Food and Drug Administration (FDA).</li>
-                <li><strong>EUDR Support:</strong> Helps producers and suppliers navigate the European Union's 2024 regulation against deforestation through geospatial analytics and geo-location-based deforestation insights.</li>
+              <li><strong>Open Source Repos:</strong><a href="https://github.com/microsoft/foodvibes-ai" target="_blank">FoodVibes Git Repo</a> | <a href="https://github.com/Angelaangie-ai/terra_trace" target="_blank">TerraTrace Git Repo</a> | <a href="https://www.microsoft.com/en-us/research/project/project-farmvibes/" target="_blank">FarmVibes Project</a> | <a href="https://github.com/nazish-naeem/SatExt" target="_blank">SatExt Git Repo</a></li>
+              <li><strong>Publications:</strong> <a href="https://ieeexplore.ieee.org/abstract/document/9773091" target="_blank">Re-Inventing the Food Supply Chain with IoT</a> | <a href="https://dl.acm.org/doi/pdf/10.1145/3701701.3701705" target="_blank">Fresh Sense: Wireless pallet-level produce sensing</a> | <a href="https://arxiv.org/pdf/2502.18704" target="_blank">TerraTrace: Land Use Monitoring</a> | <a href= "https://www.nature.com/articles/s41467-025-60282-7" target="_blank"> Hybridized anti-forgery DNA tags</a></li> 
+              <li><strong>Research Interns:</strong> Upinder Kaur (Purdue), Angela Busheska (Lafayette College), Ali Saffari (UW), Nakul Garg (UMD), and Nazish Naeem (MIT)</li>
               </ul>
               
-              <p>Through Project FoodVibes, we hope to address the global food supply challenges posed by the United Nations. We do this by focusing on the critical need for traceability, which can help reduce waste and optimize food production and supply. Project FoodVibes also explores using IoT and Wireless technology to enable a broader range of supply chain solutions. <a href="https://dl.acm.org/doi/pdf/10.1145/3701701.3701705" target="_blank"><strong>Fresh Sense</strong></a> presents a novel way of using wireless signals for pallet level produce lifetime monitoring during storage and transit of produce.</p>
-              <h3>Remote Sensing:</h3>
-              <p>In addition to supply chain traceability, I got to lead a fantastic team of interns and researchers on remote and satellite-based sensing. The projects were primarily around <a href="https://arxiv.org/pdf/2502.18704" target="_blank">land use monitoring</a>, <a href="https://github.com/microsoft/farmvibes-ai/tree/main/notebooks/forest" target="_blank"> deforestation monitoring</a>, <a href="https://github.com/nazish-naeem/SatExt" target="_blank"></a>spectral, temporal and spatial extension of satellite image data, radar-reflectors for low-fidelity communication through SAR satellite imaging. </a></p>
-              <p><strong>Links:</strong> <a href="https://github.com/microsoft/foodvibes-ai" target="_blank"><strong>FoodVibes Git Repo</strong></a> | <a href="https://github.com/Angelaangie-ai/terra_trace" target="_blank"><strong>TerraTrace Git Repo</strong></a> | <a href="https://www.microsoft.com/en-us/research/project/project-farmvibes/" target="_blank"><strong>FarmVibes Project</strong></a> | <a href="https://github.com/nazish-naeem/SatExt" target="_blank"><strong>SatExt Git Repo | <a href="https://ieeexplore.ieee.org/abstract/document/9773091" target="_blank"><strong>IEEE Publication</strong></a></p>
+              <h3>Food Supply Chain Traceability</h3>
+              <ul>
+                <li><strong>FoodVibes-ai:</strong> An open-source tool that offers food and agricultural businesses an end-to-end supply chain traceability solution. The tool builds on trusted ledgers and geospatial analytics to track the When, What and Where of a product through its lifetime and bridge the critical information gaps in the supply chains.</li>
+                <li><strong>Regulatory Compliance:</strong> Adopts strategies like the "one step forward and one step backward" association prescribed by the United Nations Food and Agriculture Organization (FAO) and by the U.S. Food and Drug Administration (FDA).</li>
+                <li><strong>EUDR Support:</strong> Represented Microsoft Research in UN-affiliated DIASCA working groups shaping global policy for tech-enabled regulatory compliance in Agri-Food. </li>
+                <li><strong>DIASCA White paper contributions:</strong> <a href="https://www.sustainable-supplychains.org/fileadmin/INA/diasca/DIASCA_Forest_Monitoring_Guidance1.pdf" target="_blank">Forest Monitoring guidelines</a> | <a href="https://www.sustainable-supplychains.org/fileadmin/INA/diasca/DIASCA_Farmer_Income_Cost_of_Production_Guidance1.pdf" target="_blank">Farmer Income and Production Cost Tracking</a></li>
+              </ul>
+
+              <h3>Wireless Sensing and IoT for Agri-Food Industry:</h3>
+              <ul>
+                <li><a href="https://dl.acm.org/doi/pdf/10.1145/3701701.3701705" target="_blank"><strong>Fresh Sense</strong></a> presents a novel way of using wireless signals for pallet level produce lifetime monitoring during storage and transit of produce.</li>
+                <li> worked with <strong><a href= "https://www.nelsonfarms.net/about" target="_blank">Nelson Farms</a></strong> and <strong>Loftus Farms</strong> to implement and validate IoT and traceability solutions to solve real world bulk-produce traceability challenges.</li>
+                <li> Our team's work on Hybridized DNA tags for raw-material tracing was published in <strong><a href= "https://www.nature.com/articles/s41467-025-60282-7" target="_blank">Nature Communications</a></strong> </li>
+              </ul>
+              <h3>Satellite Imagery and Geospatial Analytics:</h3>
+              <p>In addition to traceability, I also got to work with a team of interns and researchers on core research problems around enabling remote and satellite-based sensing for the Agri-Food industry. The projects were primarily around <strong><a href="https://arxiv.org/pdf/2502.18704" target="_blank">satellite-based land use monitoring;</a> <a href="https://github.com/microsoft/farmvibes-ai/tree/main/notebooks/forest" target="_blank"> deforestation monitoring</a> </strong>, these solve hard problems like differentiating forests, plantations and farms and other vegetation from satellite imagery; and <strong><a href="https://github.com/nazish-naeem/SatExt" target="_blank"> SatExt</a></strong>; spextral extension and superresplution for extenting satellite imagery to high temporal, spatial and spectral coverage. </a></p>
+
             </div>
           </div>
 
@@ -309,35 +330,41 @@ ul.a {
               <span class="close" onclick="closeModal('eclipse')">&times;</span>
               <h2 style="color: #009688;">Project Eclipse: Hyperlocal Air Quality Sensing</h2>
               <img src="./images/Ecosystem_Eclipse.jpg" style="width:100%; margin-bottom: 20px;" alt="Eclipse Ecosystem">
-              <p>Pollution is something most residents of cities experience regularly, but few cities have the tools to track pollution in real-time or at the neighborhood scale. This project and the team's passion to spotlight and solve a real challenge is the reason I landed at Microsoft Research!</p>
+              <p>Poor air quality is linked to various health issues, but few cities have the tools to measure air quality in real-time and at the neighborhood scale. Through this project I helped design, deploy and innovate solutions for hyperlocal, city-wide air quality monitoring.</p>
               
-              <h3>Project Goals:</h3>
+              <p><strong>Quick Links:</strong> <a href="https://www.microsoft.com/en-us/research/project/project-eclipse/" target="_blank">Project Eclipse</a> | <a href="https://www.microsoft.com/en-us/research/publication/eclipse-an-end-to-end-platform-for-low-cost-hyperlocal-environmental-sensing-in-cities/" target="_blank">Publication on device and analytics</a> | <a href="https://planetarycomputer.microsoft.com/dataset/eclipse" target="_blank">Dataset on Planetary Computer</a></p>
+
+              <h3><strong>Project Goals:</strong></h3>
               <ul>
-                <li>Bring hyperlocal air quality sensing to cities across the US</li>
-                <li>Real-time data analytics to create awareness of local air quality conditions</li>
-                <li>Help understand pollution's impact on local communities</li>
-                <li>Enable real-time, neighborhood-scale environmental monitoring</li>
+                <!-- <li>Enable hyperlocal air quality sensing in cities across the US.</li> -->
+                <li>Co-developed and deployed a hyperlocal air-quality sensing network across Chicago.</li>
+                <li>Developed infrastructure-independent fully-wireless sensors that harvested solar energy, communicated over LTE, and could be easily deployed.</li>
+                <li>Partnered with JCDecaux and local community groups to instrument 100+ transit shelters with air-quality sensors.</li>                
+                <li>Real-time data analytics and calibration to create knowledge-driven understanding of local air quality conditions.</li>
+                <li>Enable citizen science to understand pollution's impact on local communities</li>
               </ul>
               
-              <p>As a part of the interdisciplinary team, I helped design, calibrate, deploy and maintain the network of a hundred air quality sensors in the city of Chicago to make this vision possible.</p>
+              <p>As a part of this project, I got to innovate with an interdisciplinary team of researchers, interns, local environmental agencies and community groups</p>
               
-              <p><strong>Links:</strong> <a href="https://www.microsoft.com/en-us/research/project/project-eclipse/" target="_blank">Project Eclipse</a> | <a href="https://www.microsoft.com/en-us/research/publication/eclipse-an-end-to-end-platform-for-low-cost-hyperlocal-environmental-sensing-in-cities/" target="_blank">Publication</a></p>
+              <!-- <p><strong>Links:</strong> </p> -->
             </div>
           </div>
 
           <div id="batteryfree" class="modal">
             <div class="modal-content">
               <span class="close" onclick="closeModal('batteryfree')">&times;</span>
-              <h2 style="color: #009688;">Battery-Free Sensing: RF Bandaid Platform</h2>
+              <h2 style="color: #009688;">RF Bandaid: Fully-Analog Battery-Free Sensing and Communication</h2>
               <img src="./files/Intro.png" style="width:100%; margin-bottom: 20px;" alt="Battery-Free sensing">
               
-              <h3>Project Overview:</h3>
-              <p>As a summer intern in the Medical Devices Group at MSR in 2016, I developed a fully-analog wearable passive sensor for continuous physiological monitoring. The vision for this work is to develop a bandaid-like device that can be worn on the body for bed-side monitoring of heart rate, breathing rate, temperature and audio. It is my pleasure to continue innovating in this area of analog, battery-free sensing and communication with my Rockstar Academic Collaborators across the world - thanks for keepign me excited folks!</p>
-              
-              <h3>Key Innovations:</h3>
+              <p>As a part of the Medical Devices Group at MSR in 2016, I developed a <strong>fully-analog, wearable and passive RF sensor</strong> for continuous physiological monitoring and open sourced the design. The vision for this work is to develop a bandaid-like device that can be worn on the body for bed-side monitoring of heart rate, breathing rate, temperature and audio. I continue to work in this area of analog, battery-free sensing and communication with my Rockstar Academic Collaborators across the world - thanks for keepign me excited folks!</p>
+            
+              <p><strong>Quick Links:</strong> <a href="https://dl.acm.org/doi/10.1145/3214282" target="_blank">RF Bandaid Paper</a> | <a href="https://dl.acm.org/doi/10.1145/3517242" target="_blank">Localization Paper</a> | <a href="https://ieeexplore.ieee.org/abstract/document/9795971" target="_blank">Beat Frequency Paper</a> | <a href="https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en" target="_blank">More in Google Scholar</a></p>
+              <h3>Highlights:</h3>
+              The RFBandaid is first of its-kind in its design and capabilities. It is a fully-analog, battery-free,  sensor platform. The key innovations of the RFBandaid include:
               <ul>
-                <li><strong>Ultra-Low Power:</strong> Device operates at 35 to 160 micro Watts power budget, harvested from 915MHz RF signals</li>
-                <li><strong>Plug-and-Play Design:</strong> Flexible sensor input platform that interfaces with different types of sensors</li>
+                <li><strong>Ultra-Low Power Energy Harvesting:</strong> Device operates at 35 to 160 micro Watts power budget, harvested from 915MHz RF signals</li>
+                <li><strong>Open Sourced Plug-and-Play Analog Design:</strong> Flexible sensor input analog platform that interfaces with different types of sensors (like heart rate, breathing rate, temperature, audio).</li>
+                <li><strong>Fully-Analog Backscatter communication:</strong> Encodes sensor data in the frequency domain, eliminating the need for power-hungry ADCs and microcontrollers</li>
                 <li><strong>Distinguished Recognition:</strong> Received distinguished paper award at UbiComp 2019</li>
               </ul>
               
@@ -356,7 +383,56 @@ ul.a {
                 </video>
               </div>
               
-              <p><strong>Links:</strong> <a href="https://dl.acm.org/doi/10.1145/3214282" target="_blank">RF Bandaid Paper</a> | <a href="https://dl.acm.org/doi/10.1145/3517242" target="_blank">Localization Paper</a> | <a href="https://ieeexplore.ieee.org/abstract/document/9795971" target="_blank">Beat Frequency Paper</a> | <a href="https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en" target="_blank">More in Google Scholar</a></p>
+              
+            </div>
+          </div>
+
+          <div id="farmable" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('farmable')">&times;</span>
+              <h2 style="color: #009688;">FarmAble: Innovation to Support Local Farm-to-Table Ecosystem</h2>
+              <img src="images\Farmable.png" style="width:100%; margin-bottom: 20px;" alt="FarmAble Project">
+              
+              <p>As a part of the University of Washington - Global Innovation Exchange program, I led two innovative student capstone projects focused on bridging the gap between local farmers and restaurants through technology. These Microsoft-sponsored projects addressed critical challenges in the farm-to-table ecosystem.</p>
+            
+              <p><strong>Quick Links:</strong> 
+                <a href="https://gix.uw.edu/graduate/msti/projects/farmable" target="_blank">UW GIX Project Page</a> | 
+                <a href="https://downloads.ctfassets.net/umd99ublvjst/2BrVtI5CjimPZcw2J2g8ye/f5d819fd6e407338e67db682bf3bece3/Food.pdf" target="_blank">Project Poster</a> | 
+                <a href="https://lnkd.in/gaRDryYz" target="_blank">Frontend Repo</a> | 
+                <a href="https://lnkd.in/g9ny88wK" target="_blank">Backend Repo</a>
+              </p>
+              
+              <h3>Problem:</h3>
+              <p>In today's farm-to-table scene, restaurants face challenges sourcing local produce and farmers struggle to market their sustainable produce effectively. This gap leads to waste and inefficiency across the supply chain.</p>
+              
+              <h3>Approach:</h3>
+              <p>The team conducted extensive research and interviews across food supply chains to create prototypes that would provide value to three key stakeholders: farmers, restaurateurs, and diners.</p>
+              
+              <h3>Solution:</h3>
+              <ul>
+                <li><strong>Timestamped Produce Tracking:</strong> Real-time tracking of produce from farm to restaurant to ensure freshness and transparency</li>
+                <li><strong>QR Code Scanning:</strong> Enables restaurants to view detailed produce information and place orders seamlessly</li>
+                <li><strong>Sustainability Dashboard:</strong> Diners can view sustainability information and understand the environmental impact of their food choices</li>
+                <li><strong>Feedback Loop:</strong> Direct communication channel allowing diners to leave feedback to both farmers and restaurants</li>
+                <li><strong>AgTech Mobile Platform:</strong> Mobile-first design optimized for use in restaurant and farm environments</li>
+              </ul>
+              
+              <h3>Key Achievements:</h3>
+              <ul>
+                <li><strong>Two Successful Cohorts:</strong> Led student teams in 2023 and 2024 to develop comprehensive solutions</li>
+                <li><strong>Full-Stack Development:</strong> Complete mobile application with frontend and backend infrastructure</li>
+                <li><strong>User-Centered Design and Testing:</strong> Research-driven approach based on stakeholder interviews and market analysis</li>
+              </ul>
+              
+              <h3>Team Members:</h3>
+              <p><strong>2023-2024 Cohort:</strong> HeeJu Kim, Liuyi Zhao, Udiksha Chandra, and Wei Xu</p>
+              <p><strong>2024-2025 Cohort:</strong> Leah Lan, Xuan Chen, Grace (Jinyu) Rao, and Junyan Lu</p>
+              
+              <div style="margin: 20px 0;">
+                <h3>Project Videos:</h3>
+                <p><strong>Additional Resources:</strong> <a href="https://lnkd.in/gb-8a_Hx" target="_blank">Project Demonstration Video</a></p>
+              </div>
+              
             </div>
           </div>
 
@@ -377,7 +453,7 @@ ul.a {
             <div class="project-tile" onclick="openModal('phd')">
               <img src="./files/BCSI_new-with device.png" alt="Brain-Computer-Spinal Interface">
               <div class="project-content">
-                <div class="project-title">PhD. - Wireless & Brain-Computer-Spinal Interface</div>
+                <div class="project-title">PhD. - Wireless Power Transfer, Low-Power RF Communication & Brain-Computer-Interface</div>
                 <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Aug 2013 - Jul 2018</p>
               </div>
             </div>
@@ -385,7 +461,7 @@ ul.a {
             <div class="project-tile" onclick="openModal('masters')">
               <img src="./images/NEMS.jpg" alt="Masters - CWRU EECS">
               <div class="project-content">
-                <div class="project-title">Masters - CWRU EECS</div>
+                <div class="project-title">Masters - CWRU EECS | NEMS and Implantable Sensing</div>
                 <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Aug 2011 - Jul 2013</p>
               </div>
             </div>
@@ -407,13 +483,16 @@ ul.a {
         <div id="phd" class="modal">
           <div class="modal-content">
             <span class="close" onclick="closeModal('phd')">&times;</span>
-            <h2 style="color: #009688;">Wireless & Brain-Computer-Spinal  Interface</h2>
+            <h2 style="color: #009688;">Wireless Power Transfer, Low-Power RF Communication & Brain-Computer-Interface</h2>
             <h4 style="color: #666;">Sept 2013 - Dec 2018</h4>
             <img src="./files/BCSI_new-with device.png" style="width:100%; margin-bottom: 20px;" alt="Brain-Computer-Spinal Interface">
             
             
             <h3>Research Focus: Brain-Computer-Spinal Interface (BCSI)</h3>
             <p>My PhD research focussed on a closed loop neural interface for rehabilitation and reanimation of paralyzed limbs in patients with spinal cord injury. The BCSI system development provides a system level block diagram and functional illustration along with the devices that I developed. The system is designed to stimulate in the spinal cord based on intentions decoded from neural signals recorded in the brain and close the break in communication created by a spinal cord injury.</p>
+
+          <p><strong>Quick Links:</strong> BCI Publications:<a href="./files/VNATTAR_Dissertation_Dec2019.pdf" target="_blank">Dissertation Document</a> | <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9458256" target="_blank">Brain-Computer-Spinal-Interface</a> | <a href="https://ieeexplore.ieee.org/document/8717135" target="_blank">NeuralCLIP Paper</a> | <a href="https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en" target="_blank">More Wireless Power Transfer and Communications Papers: Google Scholar</a> </p>
+          
             <img src="./files/Power_aware.png" style="width:100%; margin-bottom: 20px;" alt="Power Aware Wireless Neural Interface">
             <h3>Key Innovations:</h3>
             <ul>
@@ -432,9 +511,8 @@ ul.a {
             
 
             <p>Apart from this core research, I worked on other projects including energy harvesting from RF and NFC for wearable sensors, analog backscatter, wireless power transfer using phased array systems and low-overhead echolocation for localizing receivers in a HF phased array power transfer system. I also developed an FPGA implementation of the RFID EPC Gen2 protocol for performing block read and write with an Impinj R1000 RFID reader.</p>
-            
-          <p><strong>Publications:</strong> <a href="./files/VNATTAR_Dissertation_Dec2019.pdf" target="_blank">Dissertation Document</a> | <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9458256" target="_blank">Brain-Computer-Spinal-Interface</a> | <a href="https://ieeexplore.ieee.org/document/8717135" target="_blank">NeuralCLIP Paper</a> | <a href="https://scholar.google.com/citations?user=up5DfNkAAAAJ&hl=en" target="_blank">More Publications: Google Scholar</a> </p>
-          </div>
+            </div>
+
         </div>
 
         <div id="masters" class="modal">
